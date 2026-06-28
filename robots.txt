@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://walker0718.github.io/xiaoye/sitemap.xml
