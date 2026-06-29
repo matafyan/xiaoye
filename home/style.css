@@ -783,3 +783,14 @@ kbd {
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Scroll reveal (JS only, crawlers see normal content) --- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
