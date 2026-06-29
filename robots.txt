@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matafyan.github.io/xiaoye/sitemap.xml

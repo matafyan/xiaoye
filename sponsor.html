@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>支持小叶助手 · 赞助</title>
+  <meta name="description" content="支持小叶助手持续开发，您的每一份赞助都是对独立开发者的鼓励">
+  <link rel="icon" href="icons/icon48.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ====== Sponsor Page Specific ====== */
+    .sponsor-hero {
+      text-align: center;
+      padding: 100px 24px 60px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .sponsor-hero-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      text-align: left;
+    }
+    .sponsor-hero .milk-tea-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      box-shadow: 0 8px 40px rgba(245, 158, 11, 0.25);
+      flex-shrink: 0;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .sponsor-hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #fcd34d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    .sponsor-hero .subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .sponsor-hero .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .sponsor-hero-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+      }
+    }
+
+    /* Support Methods */
+    .support-section {
+      padding: 20px 24px 80px;
+    }
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+    .support-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .support-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    .support-card.recommended::before {
+      content: '推荐';
+      position: absolute;
+      top: 12px;
+      right: -28px;
+      background: var(--accent);
+      color: #1a1a1a;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 32px;
+      transform: rotate(45deg);
+    }
+    .support-card-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .support-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .support-card .card-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .support-card .qr-placeholder {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 16px;
+      background: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .support-card .qr-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .support-card .qr-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+    .support-card .btn-support {
+      display: inline-block;
+      padding: 10px 28px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all var(--transition);
+      margin-top: 8px;
+    }
+    .btn-wechat {
+      background: #07c160;
+      color: #fff;
+    }
+    .btn-wechat:hover { background: #06ad56; }
+    .btn-alipay {
+      background: #1677ff;
+      color: #fff;
+    }
+    .btn-alipay:hover { background: #0958d9; }
+
+    /* Usage */
+    .usage-section {
+      padding: 40px 24px 80px;
+    }
+    .usage-list {
+      max-width: 600px;
+      margin: 32px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .usage-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .usage-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .usage-text h4 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .usage-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Thanks */
+    .thanks-section {
+      text-align: center;
+      padding: 40px 24px 60px;
+      border-top: 1px solid var(--border);
+    }
+    .thanks-section h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .thanks-section p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .heart {
+      color: #ef4444;
+      animation: heartbeat 1.5s ease-in-out infinite;
+      display: inline-block;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.2); }
+    }
+
+    /* Back link */
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+      transition: color var(--transition);
+    }
+    .back-home:hover { color: var(--accent); }
+
+    @media (max-width: 700px) {
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+      .sponsor-hero h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== Nav ====== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="icons/icon48.png" alt="小叶助手" class="nav-logo">
+        <span>小叶助手</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html#features">功能</a></li>
+        <li><a href="index.html#download">下载</a></li>
+      </ul>
+      <a href="index.html#download" class="btn-nav">下载插件</a>
+    </div>
+  </nav>
+
+  <!-- ====== Hero ====== -->
+  <section class="sponsor-hero">
+    <a href="index.html" class="back-home">← 返回首页</a>
+    <div class="sponsor-hero-row">
+      <div>
+        <img src="icons/milktea.png" alt="请我喝杯奶茶" class="milk-tea-img">
+      </div>
+      <div>
+        <h1>支持小叶助手</h1>
+        <p class="subtitle">
+        小叶助手是一个<span class="highlight">好用</span>的浏览器插件，<br>
+        致力于为国内用户提供更好的 AI 浏览体验。<br>
+        如果它对你有所帮助，欢迎请我喝杯奶茶 ☕
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Support Methods ====== -->
+  <section class="support-section">
+    <div class="container">
+      <h2 class="section-title">💛 选择支持方式</h2>
+      <p class="section-desc">每一份支持都是对独立开发者最大的鼓励</p>
+
+      <div class="support-grid">
+        <!-- 微信 -->
+        <div class="support-card recommended">
+          <div class="support-card-icon">💚</div>
+          <h3>微信支付</h3>
+          <p class="card-desc">推荐国内用户使用，扫码即可赞助</p>
+          <div class="qr-placeholder"><img src="wx.jpg" alt="微信支付二维码"></div>
+          <p class="qr-hint">打开微信扫一扫</p>
+          <span class="btn-support btn-wechat">微信赞赏</span>
+        </div>
+
+        <!-- 支付宝 -->
+        <div class="support-card">
+          <div class="support-card-icon">💙</div>
+          <h3>支付宝</h3>
+          <p class="card-desc">支持花呗、余额宝等多种方式</p>
+          <div class="qr-placeholder"><img src="zfb.jpg" alt="支付宝二维码"></div>
+          <p class="qr-hint">打开支付宝扫一扫</p>
+          <span class="btn-support btn-alipay">支付宝赞助</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Usage ====== -->
+  <section class="section section-alt usage-section">
+    <div class="container">
+      <h2 class="section-title">✨ 你的支持将用于</h2>
+      <p class="section-desc">每一杯奶茶都是我继续前进的动力</p>
+
+      <div class="usage-list">
+        <div class="usage-item">
+          <span class="usage-icon">🔧</span>
+          <div class="usage-text">
+            <h4>持续维护与功能迭代</h4>
+            <p>不断优化翻译质量、提升 AI 对话体验，增加更多实用功能</p>
+          </div>
+        </div>
+        <!-- <div class="usage-item">
+          <span class="usage-icon">📚</span>
+          <div class="usage-text">
+            <h4>接入更多 AI 模型</h4>
+            <p>持续适配新的国内大模型，让用户有更多选择</p>
+          </div>
+        </div> -->
+        <!-- <div class="usage-item">
+          <span class="usage-icon">💡</span>
+          <div class="usage-text">
+            <h4>保持免费开源</h4>
+            <p>插件永远免费，代码完全开源，所有用户都能自由使用</p>
+          </div>
+        </div> -->
+        <!-- <div class="usage-item">
+          <span class="usage-icon">📝</span>
+          <div class="usage-text">
+            <h4>撰写技术分享</h4>
+            <p>把踩坑过程整理成教程，帮助更多开发者少走弯路</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Thanks ====== -->
+  <section class="thanks-section">
+    <h2>🙏 </h2>
+    <!-- <span class="heart">♥</span> -->
+    <p>感谢你的支持！每一份赞助都是自愿鼓励，不附带额外承诺。<br>我会继续把真实实践、工具推荐和复盘内容公开分享出来。</p>
+  </section>
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="icons/icon48.png" alt="小叶助手" class="footer-logo">
+          <span>小叶助手</span>
+        </div>
+        <p class="footer-desc">国内可用的全能 AI 浏览器助手</p>
+        <div class="footer-links">
+          <a href="index.html">首页</a>
+          <a href="https://github.com/matafyan/xiaoye" target="_blank" rel="noopener">GitHub</a>
+          <a href="index.html#faq">常见问题</a>
+        </div>
+        <p class="footer-copy">&copy; 2024-2026 小叶助手 </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
