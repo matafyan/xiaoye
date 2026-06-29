@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://walker0718.github.io/xiaoye/sitemap.xml
+Sitemap: https://matafyan.github.io/xiaoye/sitemap.xml
