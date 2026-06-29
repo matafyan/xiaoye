@@ -652,6 +652,148 @@ body {
 .status-msg.success { display: block; background: #eaf7ee; color: var(--success); }
 .status-msg.error { display: block; background: #fdeaea; color: var(--error); }
 
+/* ========== 关于我们 ========== */
+.about-support {
+  margin-top: 24px;
+  text-align: center;
+}
+.about-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 16px;
+}
+.about-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.about-link {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.about-link:hover {
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ========== 提醒弹窗 ========== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 36, 22, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.25s ease;
+}
+.modal-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  max-width: 320px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 16px 48px rgba(44, 36, 22, 0.2);
+  animation: modalSlideUp 0.3s ease;
+}
+@keyframes modalSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.modal-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.modal-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+.modal-desc strong {
+  color: var(--accent);
+}
+.modal-stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 20px;
+  padding: 14px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+}
+.modal-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-stat-num {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+}
+.modal-stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modal-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s;
+}
+.modal-btn.primary {
+  background: var(--accent);
+  color: white;
+}
+.modal-btn.primary:hover {
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-md);
+}
+.modal-btn.secondary {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+.modal-btn.secondary:hover {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+.modal-btn.secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+}
+
 /* ========== Toast ========== */
 .toast {
   position: fixed;

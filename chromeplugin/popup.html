@@ -198,7 +198,7 @@
     <div class="form-group">
       <label>API 提供商</label>
       <select id="setting-provider">
-        <option value="xiaoye">小叶-免费30次/天,超出100次/6元</option>
+        <option value="xiaoye">小叶-免费30次/天,超出支持一下</option>
         <option value="qwen">通义千问 (Qwen) - 200万tokens/月免费</option>
         <option value="deepseek">DeepSeek - 低价高质</option>
         <option value="zhipu">智谱 GLM - 100万tokens/月免费</option>
@@ -239,6 +239,38 @@
 
     <button id="btn-save-settings" class="primary-btn">💾 保存设置</button>
     <div id="settings-status" class="status-msg"></div>
+
+    <div class="about-support">
+      <div class="about-divider"></div>
+      <p class="about-text">🧋 小叶助手靠爱发电，如果帮到你了</p>
+      <a href="https://matafyan.github.io/xiaoye/sponsor.html" target="_blank" class="about-link">❤️ 支持一下</a>
+    </div>
+  </div>
+
+  <!-- ========== 提醒弹窗 ========== -->
+  <div class="modal-overlay" id="reminder-modal" style="display:none;">
+    <div class="modal-card">
+      <div class="modal-icon">🧋</div>
+      <h2 class="modal-title">今天已经用了 <span id="reminder-count">0</span> 次啦</h2>
+      <p class="modal-desc">
+        小叶助手靠爱发电，如果你觉得好用，<br>
+        欢迎请我喝杯奶茶，让我能持续维护下去 💛
+      </p>
+      <div class="modal-stats">
+        <div class="modal-stat">
+          <span class="modal-stat-num">30</span>
+          <span class="modal-stat-label">次/天免费</span>
+        </div>
+        <div class="modal-stat">
+          <span class="modal-stat-num" id="reminder-next">60</span>
+          <span class="modal-stat-label">下次提醒</span>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <a href="https://matafyan.github.io/xiaoye/sponsor.html" target="_blank" class="modal-btn primary">🧋 去支持一下</a>
+        <button class="modal-btn secondary" id="btn-dismiss-reminder" disabled>继续使用 (8s)</button>
+      </div>
+    </div>
   </div>
 
   <!-- ========== Toast ========== -->
@@ -247,13 +279,5 @@
 </div>
 
 <script src="popup.js"></script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "xe3tdh9nmk");
-</script>
 </body>
 </html>
