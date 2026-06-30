@@ -1,0 +1,36 @@
+/**
+ * 小叶助手 - 划词弹出菜单样式
+ */
+
+#xiaoye-popup {
+  position: absolute;
+  z-index: 2147483647;
+  display: none;
+  gap: 2px;
+  padding: 4px;
+  background: #ffffff;
+  border: 1px solid #e5e0d5;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(44, 36, 22, 0.15), 0 0 0 1px rgba(0,0,0,0.05);
+  transition: opacity 0.15s ease;
+  opacity: 0;
+}
+
+#xiaoye-popup button {
+  padding: 7px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #5a4e3c;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+
+#xiaoye-popup button:hover {
+  background: #fdf0eb;
+  color: #e86a4a;
+}
